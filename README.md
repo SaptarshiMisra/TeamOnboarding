@@ -1,2 +1,0 @@
-# TeamOnboarding
-Created with CodeSandbox
