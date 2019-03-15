@@ -8,12 +8,16 @@ class TeamProgressBar extends React.Component {
       progress: props.progress
     };
   }
-
+  componentWillReceiveProps(props) {
+    this.setState({
+      progress: props.progress
+    });
+  }
   render() {
     return (
       <div>
         <div className="container">
-          <h2>Team Progress </h2>
+          <h2>Team Onboarding Progress {this.state.progress}%</h2>
           <div className="progress">
             <div
               className="progress-bar"

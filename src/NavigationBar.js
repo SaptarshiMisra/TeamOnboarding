@@ -11,16 +11,19 @@ class NavigationBar extends React.Component {
       blockerButtonName: props.buttonName
     };
   }
+  componentWillReceiveProps(props) {
+    this.setState({ blockerButtonName: props.buttonName });
+  }
   logout() {
     fire.auth().signOut();
   }
   openBlockerForm(e) {
     // e.preventDafault();
     if (this.state.blockerButtonName === "Add a blocker") {
-      this.setState({ blockerButtonName: "Home" });
+      // this.setState({ blockerButtonName: "Home" });
       this.props.addBlockerHandler(true, "Home");
     } else if (this.state.blockerButtonName === "Home") {
-      this.setState({ blockerButtonName: "Add a blocker" });
+      // this.setState({ blockerButtonName: "Add a blocker" });
       this.props.addBlockerHandler(false, "Add a blocker");
     }
   }

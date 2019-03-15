@@ -46,6 +46,7 @@ class DisplayKanban extends React.Component {
     );
     this.setState({
       data: dataResult,
+      initial_data: dataResult,
       progress: progress_percentage
     });
   }
@@ -137,6 +138,7 @@ class DisplayKanban extends React.Component {
           <SelectionFilter
             initialData={this.state.initial_state}
             data={this.state.data}
+            initial_data={this.state.initial_data}
             isAddBlocker={this.state.isAddBlocker}
             handleFilter={this.handler.bind(this)}
             selectedOption={this.state.selectedOption}

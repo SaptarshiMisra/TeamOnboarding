@@ -9,12 +9,22 @@ class SelectionFilter extends React.Component {
     this.state = {
       isHidden: true,
       isAddBlocker: props.isAddBlocker,
-      initial_data: props.data,
+      initial_data: props.initial_data,
       data: props.data,
       selectedOption: props.selectedOption
     };
   }
-
+  componentWillReceiveProps(props) {
+    this.setState({
+      isAddBlocker: props.isAddBlocker,
+      initial_data: props.initial_data,
+      data: props.data,
+      selectedOption: props.selectedOption
+    });
+  }
+  // componentDidUpdate() {
+  //   this.setState({ isHidden: this.state.isHidden });
+  // }
   filterBySelection = event => {
     let selection = event.target.value;
     // let initial_data = [...this.state.data];
