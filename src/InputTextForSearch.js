@@ -1,11 +1,6 @@
 import React from "react";
 
 class InputTextForSearch extends React.Component {
-  //   getDefaultProps() {
-  //     return {
-  //       value: ""
-  //     };
-  //   }
   changeHandler(e) {
     this.props.onChange(e);
   }
